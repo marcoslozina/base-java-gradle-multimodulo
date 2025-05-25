@@ -1,4 +1,5 @@
-# 📘 Proyecto de Referencia – Plantilla Java Multimódulo con Gradle y Spring Boot
+
+# 📘  Plantilla Java Multimódulo con Gradle y Spring Boot
 
 **Una guía práctica para construir backends modernos, modulares y mantenibles**
 
@@ -62,7 +63,7 @@ Este proyecto se compila siguiendo la configuración centralizada definida en `g
 Para ejecutar la app principal:
 
 ```bash
-./gradlew :application:bootRun
+./gradlew :config:bootRun
 ```
 
 ---
@@ -72,11 +73,34 @@ Para ejecutar la app principal:
 ```bash
 ./gradlew test
 ./gradlew jacocoTestReport
-./gradlew printVersion
 ./gradlew :application:test
 ./gradlew dependencies
 ./gradlew projects
 ```
+
+### 📌 Tareas personalizadas
+
+```bash
+./gradlew printVersion      # Imprime la versión configurada del proyecto
+./gradlew testCoverage      # Ejecuta pruebas y genera cobertura
+./gradlew lintAll           # Ejecuta linters (si están definidos)
+./gradlew hello             # Muestra un mensaje de prueba
+./gradlew verifyBuild       # Ejecuta build + cobertura de forma integrada
+```
+
+---
+
+## ⚙️ Tareas personalizadas disponibles
+
+Estas tareas están definidas en `buildSrc` y disponibles automáticamente:
+
+| Tarea           | Grupo         | Descripción                                                                 |
+|-----------------|---------------|-----------------------------------------------------------------------------|
+| `printVersion`  | versioning    | Imprime la versión actual del proyecto                                      |
+| `testCoverage`  | verification  | Ejecuta los tests y genera el reporte de cobertura con JaCoCo               |
+| `lintAll`       | verification  | Ejecuta todos los linters configurados (por ejemplo, `check`, ktlint, etc.) |
+| `hello`         | demo          | Imprime un mensaje simple para probar ejecución de tareas                   |
+| `verifyBuild`   | verification  | Ejecuta `build` y genera cobertura                                          |
 
 ---
 
@@ -99,5 +123,3 @@ Este proyecto está diseñado como plantilla educativa y punto de partida para d
 
 Todos los derechos reservados © 2025 Marcos Lozina  
 Obra registrada en ISBN, DNDA y Safe Creative.
-
----
