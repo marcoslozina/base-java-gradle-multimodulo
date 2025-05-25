@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: DEBUG
+
+app:
+  environment: LOCAL
+  feature-x-enabled: true

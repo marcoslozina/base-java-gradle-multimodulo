@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+server:
+  port: 8083
+
+logging:
+  level:
+    root: ERROR
+
+app:
+  environment: PROD
+  feature-x-enabled: false

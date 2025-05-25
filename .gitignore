@@ -1,0 +1,65 @@
+# === Build system ===
+.gradle/
+build/
+**/build/
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+out/
+
+# === Eclipse (por si alguien lo usa) ===
+*.classpath
+*.project
+*.settings/
+
+# === VS Code ===
+.vscode/
+
+# === Archivos generados ===
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.log
+
+# === Gradle internos ===
+**/.gradle/
+**/build/libs/
+**/build/classes/
+**/build/tmp/
+**/build/reports/
+**/build/test-results/
+**/build/generated/
+**/build/out/
+
+# === Cobertura / Test / Análisis ===
+*.ec
+*.exec
+coverage/
+jacoco-report/
+
+# === Archivos del sistema operativo ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# === Archivos temporales de edición ===
+*~
+
+# === Otros ===
+*.lock
+*.bin
+.cache/
+
+# === Gradle Wrapper (necesario para CI/CD) ===
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat

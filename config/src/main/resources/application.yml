@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: mi-aplicacion
+  profiles:
+    active: local  # Se puede sobrescribir por línea de comando o variable de entorno
+
+server:
+  port: 8080  # Valor base, puede ser sobreescrito por cada perfil
+
+logging:
+  level:
+    root: INFO
