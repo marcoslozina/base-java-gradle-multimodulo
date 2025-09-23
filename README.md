@@ -1,11 +1,13 @@
-
-# 📘  Plantilla Java Multimódulo con Gradle y Spring Boot
+# 📘 Plantilla Java Multimódulo con Gradle y Spring Boot
 
 **Una guía práctica para construir backends modernos, modulares y mantenibles**
 
-Este repositorio acompaña al eBook **"Plantilla Java Multimódulo con Gradle y Spring Boot"** y representa una implementación práctica de los conceptos explicados en el libro. Aplica una arquitectura escalable y mantenible basada en Java 21, Spring Boot y Gradle con Kotlin DSL.
+Este repositorio acompaña al eBook publicado en Amazon:  
+👉 [**Plantilla Java Multimódulo con Gradle y Spring Boot**](https://www.amazon.com/dp/B0FRR8P9KP)
 
-> 💡 **Objetivo**: Servir como punto de partida profesional para proyectos backend modernos, con una estructura modular, limpia y extensible.
+El libro explica paso a paso cómo estructurar proyectos backend profesionales con **Java 21, Spring Boot 3 y Gradle 8 (Kotlin DSL)**, y este repositorio representa la implementación práctica de esos conceptos.
+
+> 💡 **Objetivo**: Servir como punto de partida profesional para proyectos backend modernos, con una arquitectura modular, limpia y extensible.
 
 ---
 
@@ -38,7 +40,7 @@ base-java-gradle-multimodulo/
 
 ## 📘 Relación con el eBook
 
-Cada capítulo del eBook está vinculado con elementos concretos de este proyecto. Podés seguir el desarrollo del repositorio a medida que avanza la lectura del libro, replicando cada concepto explicado:
+Cada capítulo del eBook está vinculado con elementos concretos de este proyecto. Podés seguir el repositorio mientras avanzás en la lectura, replicando cada concepto explicado:
 
 | Capítulo | Área aplicada | Tema |
 |----------|----------------|------|
@@ -49,6 +51,8 @@ Cada capítulo del eBook está vinculado con elementos concretos de este proyect
 | Tareas personalizadas | build.gradle.kts | Automatización |
 | Toolchain y compilación | java.toolchain | JDK configurable desde propiedades |
 | Pruebas y cobertura | test/, jacoco | Test unitarios y métricas de calidad |
+
+📖 [Ver el eBook en Amazon](https://www.amazon.com/dp/B0FRR8P9KP)
 
 ---
 
@@ -81,24 +85,22 @@ Para ejecutar la app principal:
 ### 📌 Tareas personalizadas
 
 ```bash
-./gradlew printVersion      # Imprime la versión configurada del proyecto
-./gradlew testCoverage      # Ejecuta pruebas y genera cobertura
-./gradlew lintAll           # Ejecuta linters (si están definidos)
-./gradlew hello             # Muestra un mensaje de prueba
-./gradlew verifyBuild       # Ejecuta build + cobertura de forma integrada
+./gradlew printVersion
+./gradlew testCoverage
+./gradlew lintAll
+./gradlew hello
+./gradlew verifyBuild
 ```
 
 ---
 
 ## ⚙️ Tareas personalizadas disponibles
 
-Estas tareas están definidas en `buildSrc` y disponibles automáticamente:
-
 | Tarea           | Grupo         | Descripción                                                                 |
 |-----------------|---------------|-----------------------------------------------------------------------------|
 | `printVersion`  | versioning    | Imprime la versión actual del proyecto                                      |
 | `testCoverage`  | verification  | Ejecuta los tests y genera el reporte de cobertura con JaCoCo               |
-| `lintAll`       | verification  | Ejecuta todos los linters configurados (por ejemplo, `check`, ktlint, etc.) |
+| `lintAll`       | verification  | Ejecuta todos los linters configurados (check, ktlint, etc.)                |
 | `hello`         | demo          | Imprime un mensaje simple para probar ejecución de tareas                   |
 | `verifyBuild`   | verification  | Ejecuta `build` y genera cobertura                                          |
 
@@ -113,13 +115,26 @@ Estas tareas están definidas en `buildSrc` y disponibles automáticamente:
 
 ---
 
+## 📖 Sobre el libro
+
+Este repositorio está directamente relacionado con el eBook publicado en Amazon:
+
+📘 [**Plantilla Java Multimódulo con Gradle y Spring Boot**](https://www.amazon.com/dp/B0FRR8P9KP)
+- ISBN registrado
+- Obra protegida en DNDA y Safe Creative
+- Autor: **Marcos Lozina**
+
+---
+
 ## 🤝 Contribuciones
 
 Este proyecto está diseñado como plantilla educativa y punto de partida para desarrollos backend reales. Podés adaptarlo libremente a tus necesidades.
+
+Si leíste el libro, ¡tu reseña en Amazon es muy valiosa para seguir mejorando y compartiendo conocimiento con la comunidad! 🙌
 
 ---
 
 ## 📜 Licencia
 
-Todos los derechos reservados © 2025 Marcos Lozina  
-Obra registrada en ISBN, DNDA y Safe Creative.
+Todos los derechos reservados © 2025 Marcos Lozina.  
+Obra registrada en ISBN, DNDA y Safe Creative.  

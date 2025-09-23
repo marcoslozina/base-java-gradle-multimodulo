@@ -1,8 +1,4 @@
-import com.tuempresa.proyecto.build.ProjectConventions
-
 plugins {
-    java
-}
-java {
-    toolchain.languageVersion.set(ProjectConventions.javaVersion)
+  id("java") // porque este módulo usa Java puro
+  id("com.tuempresa.proyecto.java-conventions") // tu plugin centralizado
 }

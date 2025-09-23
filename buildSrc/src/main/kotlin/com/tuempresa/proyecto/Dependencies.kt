@@ -1,3 +1,5 @@
+package com.tuempresa.proyecto
+
 object Dependencies {
     const val springBootBom = "org.springframework.boot:spring-boot-dependencies:${Versions.springBoot}"
     const val springBootStarter = "org.springframework.boot:spring-boot-starter"
