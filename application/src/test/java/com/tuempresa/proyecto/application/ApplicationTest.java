@@ -1,4 +1,4 @@
-package com.tuempresa.proyecto.config;
+package com.tuempresa.proyecto.application;
 
 
 import org.junit.jupiter.api.Test;

@@ -120,9 +120,9 @@ Para ejecutar la app principal:
 Este repositorio está directamente relacionado con el eBook publicado en Amazon:
 
 📘 [**Plantilla Java Multimódulo con Gradle y Spring Boot**](https://www.amazon.com/dp/B0FRR8P9KP)
-- ISBN registrado
-- Obra protegida en DNDA y Safe Creative
+
 - Autor: **Marcos Lozina**
+- Publicado en **Amazon KDP**
 
 ---
 
@@ -134,7 +134,14 @@ Si leíste el libro, ¡tu reseña en Amazon es muy valiosa para seguir mejorando
 
 ---
 
-## 📜 Licencia
+## 📜 Licencia y Registro Legal
+
+| Registro             | Detalle                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| **ISBN**             | 978-631-00-9065-8                                                       |
+| **DNDA (Argentina)** | EX-2025-53087447--APN-DNDA – Obra inédita registrada a nombre de *Marcos Raimundo Lozina* |
+| **Safe Creative**    | Código: 2505211801388 – [Certificado en línea](https://www.safecreative.org/work/2505211801388) |
+| **Licencia**         | Todos los derechos reservados                                           |
 
 Todos los derechos reservados © 2025 Marcos Lozina.  
-Obra registrada en ISBN, DNDA y Safe Creative.  
+Este material no puede ser reproducido, distribuido ni transmitido en ninguna forma o por ningún medio sin autorización expresa del autor.

@@ -3,42 +3,37 @@ package com.tuempresa.proyecto
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
-import org.gradle.testing.jacoco.tasks.JacocoReport
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.repositories
 import org.gradle.kotlin.dsl.withType
+import org.gradle.testing.jacoco.tasks.JacocoReport
 
 class JavaConventionsPlugin : Plugin<Project> {
   override fun apply(target: Project) = with(target) {
-    // Grupo y versión definidos en ProjectConventions
     group = ProjectConventions.group
     version = ProjectConventions.version
 
-    // Repositorios comunes
-    repositories { mavenCentral() }
-
-    // Solo aplica cuando el subproyecto tenga plugin "java"
+    // Para módulos Java
     plugins.withId(Plugins.java) {
-      // Configuración de toolchain Java
+      // Toolchain
       extensions.configure(org.gradle.api.plugins.JavaPluginExtension::class.java) {
         toolchain.languageVersion.set(ProjectConventions.javaVersion)
       }
 
-      // Aplica JaCoCo
+      // Jacoco en todos los módulos Java
       pluginManager.apply("jacoco")
 
-      // Dependencias de test
+      // BOM + deps de test parametrizadas
       dependencies {
+        // Si usás Spring en módulos, el BOM alinea versiones
+        add("implementation", platform(Dependencies.springBootBom))
         add("testImplementation", Dependencies.junit)
       }
 
-      // Configuración de tests
+      // Tests + cobertura
       tasks.withType<Test> {
         useJUnitPlatform()
         finalizedBy("jacocoTestReport")
       }
-
-      // Reportes de JaCoCo
       tasks.withType(JacocoReport::class.java).configureEach {
         reports {
           xml.required.set(true)
@@ -46,7 +41,7 @@ class JavaConventionsPlugin : Plugin<Project> {
         }
       }
 
-      // Registrar tareas custom (hello, printVersion, testCoverage)
+      // Tus tareas DX (hello, printVersion, testCoverage)
       configureCustomTasks()
     }
   }
