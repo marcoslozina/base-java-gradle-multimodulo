@@ -1,6 +1,6 @@
 package com.tuempresa.proyecto
 
 object Versions {
-  const val springBoot = "3.2.5"
-  const val junit = "5.10.0"
+  const val springBoot = "3.3.6"
+  const val junit = "5.11.4"
 }
