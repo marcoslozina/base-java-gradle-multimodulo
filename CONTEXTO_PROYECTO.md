@@ -171,6 +171,64 @@ El plugin `com.tuempresa.proyecto.java-conventions` aplica automáticamente:
 - ✅ **JUnit Platform**: Configura testing con JUnit 5
 - ✅ **Tareas personalizadas**: Agrega tareas útiles (hello, printVersion, testCoverage, etc.)
 
+### Version Catalog: Evolución Moderna (Recomendado)
+
+> **Nota**: Aunque este proyecto usa `buildSrc`, **Gradle Version Catalog** es la evolución moderna recomendada por Gradle para gestionar dependencias y versiones.
+
+**Version Catalog** (disponible desde Gradle 7.0) ofrece ventajas significativas:
+
+#### Ventajas sobre buildSrc
+
+1. **Mejor rendimiento**: No requiere compilación previa como `buildSrc`
+2. **Soporte IDE superior**: Autocompletado nativo en IntelliJ IDEA y Android Studio
+3. **Formato declarativo**: Archivo TOML legible y mantenible (`gradle/libs.versions.toml`)
+4. **Compartible entre proyectos**: Fácil de compartir entre múltiples repositorios
+5. **Type-safe en Kotlin DSL**: Acceso type-safe con `libs`
+
+#### Ejemplo de Version Catalog
+
+```toml
+# gradle/libs.versions.toml
+[versions]
+spring-boot = "3.3.6"
+junit = "5.11.4"
+
+[libraries]
+spring-boot-starter-web = { 
+    module = "org.springframework.boot:spring-boot-starter-web", 
+    version.ref = "spring-boot" 
+}
+junit-jupiter = { 
+    module = "org.junit.jupiter:junit-jupiter", 
+    version.ref = "junit" 
+}
+
+[bundles]
+spring-web = ["spring-boot-starter", "spring-boot-starter-web"]
+testing = ["junit-jupiter", "spring-boot-starter-test"]
+
+[plugins]
+spring-boot = { 
+    id = "org.springframework.boot", 
+    version.ref = "spring-boot" 
+}
+```
+
+**Uso en build.gradle.kts:**
+```kotlin
+plugins {
+    alias(libs.plugins.spring.boot)
+}
+
+dependencies {
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.bundles.spring.web)
+    testImplementation(libs.bundles.testing)
+}
+```
+
+> 💡 **Recomendación**: Para proyectos nuevos, considera usar **Version Catalog** en lugar de `buildSrc`. Para proyectos existentes con convention plugins, `buildSrc` sigue siendo válido.
+
 ### gradle.properties
 
 ```properties
@@ -382,13 +440,141 @@ Este proyecto es la implementación práctica del eBook **"Java 21 Multimódulo 
 | Introducción | `build.gradle.kts`, `settings.gradle.kts` |
 | Modularización | Estructura de módulos (`application/`, `domain/`, etc.) |
 | buildSrc | `buildSrc/` completo |
+| **Version Catalog** | *Recomendado para proyectos nuevos* (ver sección Version Catalog) |
 | Propiedades globales | `gradle.properties` |
 | Tareas personalizadas | `CustomTasks.kt` |
 | Toolchain | `ProjectConventions.kt` |
 | Pruebas y cobertura | Configuración de JaCoCo y JUnit |
+| **IA para optimización** | *Sección sobre IA en desarrollo con Gradle* |
 | CI/CD | `.github/workflows/ci.yml` |
 | Arquitectura hexagonal | Separación de módulos |
 | Configuración por perfiles | `config/src/main/resources/` |
+
+### Contenido del eBook
+
+El eBook incluye capítulos específicos sobre:
+
+- **Capítulo 5.5**: Version Catalog - La evolución moderna de buildSrc
+- **Capítulo 8**: Optimización de builds - Incluye sección sobre IA para optimización y análisis de builds
+
+Estos temas están documentados en este contexto del proyecto para referencia completa.
+
+---
+
+## 🤖 Inteligencia Artificial en el Desarrollo con Gradle
+
+Las herramientas de **Inteligencia Artificial** están transformando cómo desarrollamos y optimizamos proyectos Gradle, ofreciendo asistencia inteligente para generar código, detectar problemas y optimizar configuraciones.
+
+### Asistentes de IA para Generar Código Gradle
+
+Herramientas como **GitHub Copilot**, **Cursor**, **Codeium** o **IntelliJ AI Assistant** pueden generar código Gradle de forma efectiva con los prompts adecuados.
+
+#### Prompts Efectivos para IA
+
+**Generar build.gradle.kts básico:**
+```
+Genera un build.gradle.kts para Java 21 con Spring Boot 3.3.6, 
+usando Kotlin DSL, con soporte para tests con JUnit 5 y Lombok.
+```
+
+**Generar libs.versions.toml:**
+```
+Crea un libs.versions.toml con Spring Boot 3.3.6, JUnit 5.11.4, 
+Jackson 2.16.1 y Lombok 1.18.30. Incluye bundles para spring-web 
+y testing.
+```
+
+**Generar task personalizada:**
+```
+Crea una task Gradle en Kotlin DSL que genere reportes de análisis 
+estático, usando inputs y outputs para incremental builds.
+```
+
+### Análisis de Builds con IA
+
+Las herramientas de IA pueden analizar configuraciones de Gradle y detectar problemas comunes:
+
+#### Detección de Problemas Comunes
+
+**Problemas que IA puede detectar:**
+- ✅ Versiones dinámicas (`+`) que afectan reproducibilidad
+- ✅ Dependencias duplicadas o conflictos de versiones
+- ✅ Tasks no optimizadas (faltan inputs/outputs)
+- ✅ Configuraciones que impiden cacheo
+- ✅ Uso ineficiente de recursos (workers, memoria)
+
+**Ejemplo de análisis con IA:**
+```
+Analiza este build.gradle.kts y detecta:
+1. Problemas de performance
+2. Dependencias duplicadas
+3. Oportunidades de optimización
+4. Mejores prácticas no aplicadas
+```
+
+### Optimización Automática de Dependencias
+
+Las herramientas de IA pueden sugerir optimizaciones en la gestión de dependencias:
+
+#### Casos de Uso Prácticos
+
+**1. Migración Maven → Gradle asistida por IA**
+
+**Prompt:**
+```
+Convierte este pom.xml a build.gradle.kts usando Kotlin DSL, 
+con Version Catalog para dependencias.
+```
+
+**2. Optimizar libs.versions.toml**
+
+**Prompt:**
+```
+Analiza este libs.versions.toml y sugiere:
+- Agrupar dependencias relacionadas en bundles
+- Detectar versiones desactualizadas
+- Identificar dependencias no utilizadas
+```
+
+**3. Generar tasks optimizadas**
+
+**Prompt:**
+```
+Genera una task Gradle para ejecutar análisis estático de código 
+que sea incremental, cacheable y use parallel execution.
+```
+
+### Mejores Prácticas para Usar IA con Gradle
+
+1. **Prompts específicos y contextuales**
+   - Incluir versión de Gradle, Java y Spring Boot
+   - Especificar si usas Kotlin DSL o Groovy
+   - Mencionar si usas Version Catalog o buildSrc
+
+2. **Validar siempre el código generado**
+   - Probar en proyecto de prueba primero
+   - Verificar que compila correctamente
+   - Revisar que sigue mejores prácticas
+
+3. **Usar IA como asistente, no como reemplazo**
+   - Entender el código generado
+   - Ajustar según necesidades específicas
+   - Aprender de las sugerencias
+
+4. **Iterar y refinar**
+   - Mejorar prompts basándose en resultados
+   - Combinar múltiples sugerencias
+   - Adaptar a tu contexto específico
+
+### Herramientas Recomendadas
+
+- **GitHub Copilot**: Integrado en VS Code, IntelliJ IDEA
+- **Cursor**: Editor con IA integrada
+- **Codeium**: Alternativa gratuita a Copilot
+- **IntelliJ AI Assistant**: Integrado en IntelliJ IDEA Ultimate
+- **ChatGPT/Claude**: Para análisis y consultas complejas
+
+> ⚠️ **Nota importante:** Las herramientas de IA son asistentes poderosos, pero siempre debes revisar y validar el código generado. El conocimiento de Gradle sigue siendo esencial para tomar decisiones correctas.
 
 ---
 
@@ -415,6 +601,16 @@ Este proyecto es la implementación práctica del eBook **"Java 21 Multimódulo 
    - Tests de integración
    - Tests de contrato
    - Tests de rendimiento
+
+5. **Migración a Version Catalog**:
+   - Considerar migrar de `buildSrc` a Version Catalog
+   - Aprovechar mejor rendimiento y soporte IDE
+   - Mantener `buildSrc` solo para convention plugins
+
+6. **Integración con IA**:
+   - Usar asistentes de IA para generar código Gradle
+   - Aprovechar IA para análisis y optimización de builds
+   - Validar siempre el código generado por IA
 
 ---
 
