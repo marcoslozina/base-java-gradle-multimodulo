@@ -1,11 +1,10 @@
-# 📘 Plantilla Java Multimódulo con Gradle y Spring Boot
+# 📘 Java 21 Multimódulo con Gradle 8 y Spring Boot 3
 
-**Una guía práctica para construir backends modernos, modulares y mantenibles**
+**Guía práctica para construir backends modernos con arquitectura hexagonal, CI/CD, testing y seguridad empresarial**
 
-Este repositorio acompaña al eBook publicado en Amazon:  
-👉 [**Plantilla Java Multimódulo con Gradle y Spring Boot**](https://www.amazon.com/dp/B0FRR8P9KP)
+Este repositorio acompaña al eBook **"Java 21 Multimódulo con Gradle 8 y Spring Boot 3"**, una guía práctica pensada para desarrolladores que quieren llevar sus backends al siguiente nivel.
 
-El libro explica paso a paso cómo estructurar proyectos backend profesionales con **Java 21, Spring Boot 3 y Gradle 8 (Kotlin DSL)**, y este repositorio representa la implementación práctica de esos conceptos.
+El libro explica paso a paso cómo estructurar proyectos backend profesionales con **Java 21, Spring Boot 3.3.6 y Gradle 8 (Kotlin DSL)**, y este repositorio representa la implementación práctica de esos conceptos.
 
 > 💡 **Objetivo**: Servir como punto de partida profesional para proyectos backend modernos, con una arquitectura modular, limpia y extensible.
 
@@ -13,13 +12,16 @@ El libro explica paso a paso cómo estructurar proyectos backend profesionales c
 
 ## 📦 Características principales
 
-- ✅ Java 21 + Spring Boot 3.2
-- ✅ Configuración con Gradle Kotlin DSL
+- ✅ **Java 21** + **Spring Boot 3.3.6**
+- ✅ Configuración con **Gradle 8** (Kotlin DSL)
 - ✅ Arquitectura multimódulo limpia y escalable
 - ✅ Centralización de dependencias en `buildSrc`
 - ✅ Uso de `spring-dependency-management` y BOM
 - ✅ Tareas personalizadas (`printVersion`, `lintAll`, etc.)
 - ✅ Compatible con CI/CD y buenas prácticas profesionales
+- ✅ Testing automatizado con JUnit 5.11.4
+- ✅ Cobertura de código con JaCoCo
+- ✅ Verificación de actualizaciones de dependencias
 
 ---
 
@@ -52,7 +54,29 @@ Cada capítulo del eBook está vinculado con elementos concretos de este proyect
 | Toolchain y compilación | java.toolchain | JDK configurable desde propiedades |
 | Pruebas y cobertura | test/, jacoco | Test unitarios y métricas de calidad |
 
-📖 [Ver el eBook en Amazon](https://www.amazon.com/dp/B0FRR8P9KP)
+---
+
+## 📖 Obtener el eBook
+
+Este repositorio está directamente relacionado con el eBook **"Java 21 Multimódulo con Gradle 8 y Spring Boot 3"**. Podés adquirirlo en cualquiera de estos canales:
+
+<div align="center">
+
+[![Amazon](https://img.shields.io/badge/Amazon-Kindle-orange?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.com/dp/B0FRR8P9KP)
+[![Hotmart](https://img.shields.io/badge/Hotmart-Digital-blue?style=for-the-badge&logo=hotjar&logoColor=white)](https://go.hotmart.com/Y102830298M)
+[![Gumroad](https://img.shields.io/badge/Gumroad-Download-black?style=for-the-badge&logo=gumroad&logoColor=white)](https://marcoslozina.gumroad.com/l/lnifg)
+
+</div>
+
+### 📚 ¿Qué encontrarás en el libro?
+
+- ✅ Cómo configurar proyectos **multimódulo** en **Gradle 8** con buenas prácticas desde el inicio
+- ✅ Integración real con **Spring Boot 3** y librerías de uso frecuente en entornos corporativos
+- ✅ Ejemplos de **arquitectura hexagonal** aplicados a proyectos modernos
+- ✅ Estrategias de **CI/CD**, testing automatizado y seguridad empresarial
+- ✅ Consejos para optimizar builds, organizar dependencias y mejorar la productividad de los equipos
+
+👉 **Ideal para**: Desarrolladores Java que quieran actualizarse a **Java 21**, líderes técnicos que busquen proyectos **escalables y mantenibles**, y profesionales que quieran preparar su backend para **producción** con estándares de la industria.
 
 ---
 
@@ -67,7 +91,7 @@ Este proyecto se compila siguiendo la configuración centralizada definida en `g
 Para ejecutar la app principal:
 
 ```bash
-./gradlew :config:bootRun
+./gradlew :application:bootRun
 ```
 
 ---
@@ -108,33 +132,33 @@ Para ejecutar la app principal:
 
 ## 🗂 Requisitos
 
-- Java 21 (configurable desde `gradle.properties`)
-- Gradle 8+
+- **Java 21** (configurable desde `gradle.properties`)
+- **Gradle 8.12+**
 - Docker (opcional)
-- IDE recomendada: IntelliJ IDEA
-
----
-
-## 📖 Sobre el libro
-
-Este repositorio está directamente relacionado con el eBook publicado en Amazon:
-
-📘 [**Plantilla Java Multimódulo con Gradle y Spring Boot**](https://www.amazon.com/dp/B0FRR8P9KP)
-
-- Autor: **Marcos Lozina**
-- Publicado en **Amazon KDP**
+- IDE recomendada: **IntelliJ IDEA**
 
 ---
 
 ## ☕ Donaciones
 
-Si este proyecto o el libro te fueron útiles, podés apoyar el desarrollo con una donación. Tu apoyo ayuda a mantener y mejorar este tipo de contenido educativo.
+Si este proyecto o el libro te fueron útiles, podés apoyar el desarrollo con una donación. Tu apoyo ayuda a mantener y mejorar este tipo de contenido educativo y a seguir creando recursos de calidad para la comunidad.
+
+<div align="center">
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/codefuel)
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=4TYGJ5S8CLX8J)
 
-- ☕ [Buy Me a Coffee](https://buymeacoffee.com/codefuel)
-- 💳 [PayPal Donate](https://www.paypal.com/donate/?hosted_button_id=4TYGJ5S8CLX8J)
+</div>
+
+### 💝 Formas de apoyar
+
+- ☕ **[Buy Me a Coffee](https://buymeacoffee.com/codefuel)** - Apoyo rápido y sencillo
+- 💳 **[PayPal Donate](https://www.paypal.com/donate/?hosted_button_id=4TYGJ5S8CLX8J)** - Donación directa
+- 📖 **Comprar el eBook** - Adquirir el libro en [Amazon](https://www.amazon.com/dp/B0FRR8P9KP), [Hotmart](https://go.hotmart.com/Y102830298M) o [Gumroad](https://marcoslozina.gumroad.com/l/lnifg)
+- ⭐ **Dar una estrella** - Si te gustó el proyecto, ¡dale una estrella en GitHub!
+- 📝 **Dejar una reseña** - Tu opinión en Amazon es muy valiosa
+
+¡Gracias por tu apoyo! 🙌
 
 ---
 
@@ -142,7 +166,14 @@ Si este proyecto o el libro te fueron útiles, podés apoyar el desarrollo con u
 
 Este proyecto está diseñado como plantilla educativa y punto de partida para desarrollos backend reales. Podés adaptarlo libremente a tus necesidades.
 
-Si leíste el libro, ¡tu reseña en Amazon es muy valiosa para seguir mejorando y compartiendo conocimiento con la comunidad! 🙌
+### 📝 ¿Cómo contribuir?
+
+- ⭐ **Dar una estrella** al proyecto si te resultó útil
+- 🐛 **Reportar bugs** o sugerir mejoras abriendo un issue
+- 📖 **Compartir el proyecto** con otros desarrolladores
+- ⭐ **Dejar una reseña** del libro en [Amazon](https://www.amazon.com/dp/B0FRR8P9KP), [Hotmart](https://go.hotmart.com/Y102830298M) o [Gumroad](https://marcoslozina.gumroad.com/l/lnifg)
+
+¡Tu feedback es muy valioso para seguir mejorando y compartiendo conocimiento con la comunidad! 🙌
 
 ---
 
