@@ -6,5 +6,8 @@ object Dependencies {
     const val springWeb = "org.springframework.boot:spring-boot-starter-web"
     const val actuator = "org.springframework.boot:spring-boot-starter-actuator"
     const val devtools = "org.springframework.boot:spring-boot-devtools"
-    const val junit = "org.junit.jupiter:junit-jupiter:${Versions.junit}"
+    // Sin version explicita: la resuelve el platform BOM (springBootBom) que se
+    // agrega como "implementation" en JavaConventionsPlugin y llega tambien a
+    // testImplementation por herencia de configuraciones de Gradle.
+    const val junit = "org.junit.jupiter:junit-jupiter"
 }

@@ -7,9 +7,10 @@ pluginManagement {
     mavenCentral()
   }
 
-  // leer las props desde gradle.properties
-  val springBootVersion: String by settings
-  val springDepMgmtVersion: String by settings
+  // leer las props desde gradle.properties (API recomendada desde Gradle 9.6,
+  // "by settings" queda deprecado y se elimina en Gradle 10)
+  val springBootVersion = providers.gradleProperty("springBootVersion").get()
+  val springDepMgmtVersion = providers.gradleProperty("springDepMgmtVersion").get()
 
   plugins {
     id("org.springframework.boot") version springBootVersion
